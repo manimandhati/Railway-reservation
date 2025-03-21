@@ -1,0 +1,93 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container" style="display: flex;align-items: center;justify-content: center;margin-top: 50px;">
+    <div class='jumbotron' style='width: 100%; '>
+
+            <div style="margin-bottom: 40px;">
+                <h1>Welcome to Book Ticket Reservation {{request.user.username}} !</h1>
+            </div>
+        
+
+        <form method='POST' action='/booking'>
+            {% csrf_token %}
+            <div class="form-group row">
+              <label class='form-label col-sm-2' for="name">Train Number</label>
+              <div class='col-sm-10'>
+                
+                  <select class="form-control" id="trainnumber" name="trainnumber">
+                      {%for t in trainno%}
+                      <option value={{t}} style="font-size:18px;color:black">{{t}}</option>
+                      {% endfor %}
+                  </select>
+
+              </div>
+          </div>
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="name">Source</label>
+                <div class='col-sm-10'>
+
+                    <select class="form-control" id="source" name="source">
+                        {%for t in sources%}
+                        <option value={{t}} style="font-size:18px;color:black">{{t}}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="name">Destination</label>
+                <div class='col-sm-10'>
+                  
+                    <select class="form-control" id="destination" name="destination">
+                        {%for t in destinations%}
+                        <option value={{t}} style="font-size:18px;color:black">{{t}}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+            </div>
+            
+
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="personname">Name of the person</label>
+                <div class='col-sm-10'>
+                    <input type="text" class="form-control" id="personname" placeholder='Enter the Name of person'
+                        name="personname" style="font-size:18px;color:black">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="personname">Email</label>
+                <div class='col-sm-10'>
+                    <input type="text" class="form-control" id="email" placeholder='Email'
+                        name="email" style="font-size:18px;color:black">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="age">Age</label>
+                <div class='col-sm-10'>
+                    <input type="number" class="form-control" id="age" placeholder='Enter the Age' name="age" style="font-size:18px;color:black">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="gender">Gender</label>
+                <div class='col-sm-10'>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="Male" style="font-size:18px;color:black">Male</option>
+                        <option value="Female" style="font-size:18px;color:black">Female</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" style="font-size:18px;color:black">BOOK</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

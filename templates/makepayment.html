@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% block content %}
+<form action="/makepayment" method="POST"> 
+    {% csrf_token %}
+    <div class="form-group row">
+        <label class='form-label col-sm-2' for="status" style="font-size:18px;color:rgb(244, 241, 241)">STATUS</label>
+        <div class='col-sm-10'>
+            <input type="text" name="status" id="status" style="font-size:18px;color:black">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class='form-label col-sm-2' for="amount" style="font-size:18px;color:rgb(244, 241, 241)">TICKET PRICE</label>
+        <div class='col-sm-10'>
+            <input type="text" name="amount" id="amount" style="font-size:18px;color:black">
+        </div>
+    </div>
+    <button type="submit" style="font-size:18px;color:rgb(11, 11, 11);padding:5px 10px;">PAY</button>
+
+</form>
+
+{% endblock %}

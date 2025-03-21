@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% block content %} 
+<div style="margin-top: 50px;">
+    <h1 style="color:white;text-align:center"> My booking </h1>
+    {% csrf_token %}
+    <table class="table table-striped" style="width: 90%;margin-left:75px ;margin-top: 30px;">
+        <thead class="thead-dark text-white" style="font-size:15px">
+            <tr>
+                <th scope="col">Train Number</th>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">PAY</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for p in persons%}
+            
+            <tr style="font-size:15px;color:white">
+                <td>{{p.trainnumber}}</td>
+                <td>{{p.source}}</td>
+                <td>{{p.destination}}</td>
+                <td>{{p.personname}}</td>
+                <td>{{p.age}}</td>
+                <td>{{p.gender}}</td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

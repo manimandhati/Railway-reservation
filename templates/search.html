@@ -1,0 +1,12 @@
+{% extends 'base.html'%} 
+{% block content %}
+
+<h1 style="color:white;text-align:center">SEARCH TRAIN</h1>
+<form action="/search" method="post">
+        {% csrf_token %}
+        <input type="text" class="form-control" id="source" placeholder='FROM' name="source" style="font-size:18px;color:black">
+        <input type="text" class="form-control" id="destination" placeholder='TO' name="destination" style="font-size:18px;color:black">
+        <button type="submit" style="width:100px;height:35px;">SUBMIT</button>
+</form>
+
+{%endblock%}

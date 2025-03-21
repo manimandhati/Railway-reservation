@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%block content%}
+<h1 style="color:white;text-align:center">ADD TRAIN</h1>
+    <form action="/add" method="post">
+        {% csrf_token %}
+        <input type="text" class="form-control" id="train_name" placeholder='Enter the Name of the train' name="train_name" style="font-size:18px;color:black">
+        <input type="text" class="form-control" id="trainnumber" placeholder='Train number' name="trainnumber" style="font-size:18px;color:black">
+        <input type="text" class="form-control" id="source" placeholder='FROM' name="source" style="font-size:18px;color:black">
+        <input type="text" class="form-control" id="destination" placeholder='TO' name="destination" style="font-size:18px;color:black">
+        <input type="date" class="form-control" id="date"  name="date" style="font-size:18px;color:black">
+        <input type="time" class="form-control" id="time"  name="time" style="font-size:18px;color:black">
+        <input type="text" class="form-control" id="seats_available" placeholder="SEATS" name="seats_available" style="font-size:18px;color:black">
+        <input type="text" class="form-control" id="price"  name="price" placeholder="PRICE"  style="font-size:18px;color:black">
+        <button type="submit" style="width:100px;height:40px;font-size:20px;">SUBMIT</button>
+
+    </form>
+{%endblock%}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}  
+    <div class="container mt-3">            
+        <table class="table table-striped">
+          <thead class="thead-dark text-white" style="font-size:15px">
+            <tr>
+              <th>Train Name</th>
+              <th>Train Number</th>
+              <th>Source</th>
+              <th>Destination</th>
+              <th>Time</th>
+              <th>Total seats</th>
+              <th>BOOK</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:15px;color:rgb(13, 13, 13)" >
+            {% for i in data %}
+
+            <tr>
+              <td>{{i.trainname}}</td>
+              <td>{{i.trainnumber}}</td>
+              <td>{{i.source}}</td>
+              <td>{{i.destination}}</td>
+              <td>{{i.time}}</td> 
+              <td>{{i.seats}}</td>
+              <td><a href="/bookform">BOOK</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+{% endblock %}
